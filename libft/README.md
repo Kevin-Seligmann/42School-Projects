@@ -15,6 +15,7 @@ Module I functions were implemented imitating the behaviour of Apple's Mac OS at
 - All projects must follow the [Norminette](https://github.com/42School/norminette) style guide.
 - External functions and libraries are disallowed unless explicitly specified.
 - Projects should not have memory leaks or terminate unexpectedly.
+- Must submit a Makefile with specified rules that compiles a libft.a target.
 
 ### Module I
 
