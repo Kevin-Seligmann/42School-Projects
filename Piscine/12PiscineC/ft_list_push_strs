@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_list_push_strs                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kseligma <kseligma@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/05 22:10:07 by kseligma          #+#    #+#             */
+/*   Updated: 2024/09/05 22:16:25 by kseligma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_list.h"
+
+// No clearing failed allocs here, not allowed.
+t_list	*ft_list_push_strs(int size, char **strs)
+{
+	int		ind;
+	t_list	*head;
+	t_list	*new_node;
+
+	ind = 0;
+	head = NULL;
+	while (ind < size)
+	{
+		new_node = ft_create_elem(strs[ind]);
+		if (!new_node)
+			break ;
+		ft_list_push_back(&head, new_node);
+		ind ++;
+	}
+}
