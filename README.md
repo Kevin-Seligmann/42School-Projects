@@ -23,7 +23,6 @@ This repository contains projects made at **42School**.
 - **cub3d** – A 3D world simulation using ray tracing.
 - **minishell** – A medium-sized Bash-like CLI implementation.
 - **ft_ping** – A program to ping IPv4 addresses and display information.
-- **ft_ssl** – An implementation of OpenSSL-like commands.
 
 ## C++ Projects  
 
