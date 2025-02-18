@@ -6,39 +6,63 @@
 /*   By: kseligma <kseligma@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 21:23:31 by kseligma          #+#    #+#             */
-/*   Updated: 2024/06/23 17:30:14 by kseligma         ###   ########.fr       */
+/*   Updated: 2024/01/16 22:26:52 by kseligma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#define ITOA_BUFFER 11
-#define MIN_INT -2147483648
-#define MIN_INT_S "-2147483648"
+static int	num_len(int n)
+{
+	int	len;
+
+	if (n == 0)
+		return (1);
+	len = 0;
+	if (n < 0)
+		len ++;
+	while (n != 0)
+	{
+		n /= 10;
+		len ++;
+	}
+	return (len);
+}
+
+static char	*min(void)
+{
+	char	*m;
+
+	m = ft_strdup("-2147483648");
+	if (m == 0)
+		return (0);
+	return (m);
+}
 
 char	*ft_itoa(int n)
 {
-	char	result[ITOA_BUFFER + 1];
-	int		i;
-	int		is_gt_zero;
+	char	*str;
+	int		len;
+	int		ind;
 
-	if (n == MIN_INT)
-		return (ft_strdup(MIN_INT_S));
-	is_gt_zero = 1;
+	if (n == -2147483648)
+		return (min());
+	ind = 0;
+	len = num_len(n);
+	str = (char *) malloc(len + 1);
+	if (str == 0)
+		return (0);
 	if (n < 0)
 	{
 		n *= -1;
-		is_gt_zero = 0;
+		str[ind++] = '-';
 	}
-	i = ITOA_BUFFER - 1;
-	while (n > 0 || i == ITOA_BUFFER - 1)
+	str[len] = 0;
+	while (ind < len)
 	{
-		result[i] = n % 10 + '0';
+		str[len - 1] = n % 10 + '0';
 		n /= 10;
-		i --;
+		len --;
 	}
-	if (!is_gt_zero)
-		result[i --] = '-';
-	result[ITOA_BUFFER] = 0;
-	return (ft_strdup(result + i + 1));
+	return (str);
 }

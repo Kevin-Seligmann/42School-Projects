@@ -13,13 +13,13 @@
 char	*ft_strchr(const char *s, int c)
 {
 	char	l;
-	char	*p;
+	char	*ptr;
 
-	p = (char *) s;
+	ptr = (char *) s;
 	l = (char) c;
-	while (*p != l && *p != 0)
-		p ++;
-	if (*p == l)
-		return (p);
+	while (*ptr != l && *ptr != 0)
+		ptr ++;
+	if (*ptr == l)
+		return (ptr);
 	return (0);
 }

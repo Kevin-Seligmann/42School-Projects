@@ -12,38 +12,33 @@
 
 #include "libft.h"
 
-static t_list	*local_free(t_list *l, void *content, void (*del)(void *))
+t_list	*dcont(t_list *fnode, void *cont, void (*del)(void *))
 {
-	ft_lstclear(&l, del);
-	del(content);
+	ft_lstclear(&fnode, del);
+	del(cont);
 	return (0);
 }
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*l_head;
-	t_list	*l_tail;
-	void	*content;
+	t_list	*fnode;
+	t_list	*lnode;
+	void	*cont;
 
-	if (!f || !del || !lst)
+	if (f == 0 || del == 0 || lst == 0)
 		return (0);
-	content = f(lst->content);
-	lst = lst->next;
-	l_head = ft_lstnew(content);
-	if (!l_head)
+	cont = f(lst->content);
+	fnode = ft_lstnew(cont);
+	if (fnode == 0)
+		return (dcont(fnode, cont, del));
+	while (lst->next != 0)
 	{
-		del(content);
-		return (0);
-	}
-	l_tail = l_head;
-	while (lst)
-	{
-		content = f(lst->content);
 		lst = lst->next;
-		l_tail->next = ft_lstnew(content);
-		l_tail = l_tail->next;
-		if (!l_tail)
-			return (local_free(l_head, content, del));
+		cont = f(lst->content);
+		lnode = ft_lstnew(cont);
+		if (lnode == 0)
+			return (dcont(fnode, cont, del));
+		ft_lstadd_back(&fnode, lnode);
 	}
-	return (l_head);
+	return (fnode);
 }

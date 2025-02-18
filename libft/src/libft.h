@@ -6,7 +6,7 @@
 /*   By: kseligma <kseligma@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 22:35:32 by kseligma          #+#    #+#             */
-/*   Updated: 2024/09/04 04:26:00 by kseligma         ###   ########.fr       */
+/*   Updated: 2024/01/16 16:29:42 by kseligma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <stdarg.h>
 # include <unistd.h>
-# include <limits.h>
 
 // Module 1
 
@@ -157,5 +155,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 	In case of memory failure, calls `ft_lstclear` on the unfinished new list.
 */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
 
 #endif

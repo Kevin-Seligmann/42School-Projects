@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lastloc.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kseligma <kseligma@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 10:08:31 by kseligma          #+#    #+#             */
-/*   Updated: 2024/06/23 17:35:22 by kseligma         ###   ########.fr       */
+/*   Created: 2024/01/12 22:55:57 by kseligma          #+#    #+#             */
+/*   Updated: 2024/01/16 17:17:42 by kseligma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_lastloc(size_t count, size_t size)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char	*p;
-
-	p = malloc(count * size * sizeof(*p));
-	if (!p)
-		return (0);
-	p[count * size - 1] = 0;
-	return ((void *) p);
+	if (lst == 0 || new == 0)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

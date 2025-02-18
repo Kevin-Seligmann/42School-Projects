@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kseligma <kseligma@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/02 12:45:54 by kseligma          #+#    #+#             */
-/*   Updated: 2024/08/05 17:23:56 by kseligma         ###   ########.fr       */
+/*   Created: 2024/01/12 23:13:13 by kseligma          #+#    #+#             */
+/*   Updated: 2024/01/16 20:03:43 by kseligma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-		i++;
-	return (s1[i] - s2[i]);
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list	*node;
+	t_list	*nnode;
+
+	if (lst == 0 || del == 0)
+		return ;
+	node = *lst;
+	while (node != 0)
+	{
+		nnode = node->next;
+		ft_lstdelone(node, del);
+		node = nnode;
+	}
+	*lst = 0;
 }

@@ -1,43 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fr_doublepointer_free.c                            :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kseligma <kseligma@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 12:10:14 by kseligma          #+#    #+#             */
-/*   Updated: 2024/07/28 12:10:44 by kseligma         ###   ########.fr       */
+/*   Created: 2024/01/14 20:34:40 by kseligma          #+#    #+#             */
+/*   Updated: 2024/01/14 20:37:42 by kseligma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_arr_free(char **arr)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	ind;
-
-	if (!arr)
+	if (f == 0)
 		return ;
-	ind = 0;
-	while (arr[ind])
+	while (lst != 0)
 	{
-		free(arr[ind]);
-		ind ++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	free(arr);
-}
-
-void	ft_arr_free_int(int **arr)
-{
-	int	ind;
-
-	if (!arr)
-		return ;
-	ind = 0;
-	while (arr[ind])
-	{
-		free(arr[ind]);
-		ind ++;
-	}
-	free(arr);
 }

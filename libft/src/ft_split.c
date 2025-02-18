@@ -6,38 +6,35 @@
 /*   By: kseligma <kseligma@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 20:43:00 by kseligma          #+#    #+#             */
-/*   Updated: 2024/07/28 12:10:02 by kseligma         ###   ########.fr       */
+/*   Updated: 2024/01/14 17:24:31 by kseligma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_arr_count_arguments(char **arr) // Not used to split but useful here
-{
-	int	count;
-
-	count = 0;
-	if (!arr)
-		return (0);
-	while (arr[count])
-		count ++;
-	return (count);
-}
-
-static size_t	total_space(char *s, char c)
+static size_t	total_space(char const *s, char c)
 {
 	size_t	len;
+	char	*str;
+	char	*ref;
 
-	if (!s)
+	if (s == 0)
 		return (0);
-	len = 0;
-	while (*s)
+	ref = 0;
+	len = 1;
+	str = (char *) s;
+	while (*str != 0)
 	{
-		if (*s != c && (*(s + 1) == c || !*(s + 1)))
+		if (*str != c && ref == 0)
+			ref = str;
+		if ((*str == c || *(str + 1) == 0) && ref != 0)
+		{
 			len ++;
-		s ++;
+			ref = 0;
+		}
+		str ++;
 	}
-	return (len + 1);
+	return (len);
 }
 
 static char	**freeall(char ***strs, size_t ind)
@@ -45,7 +42,7 @@ static char	**freeall(char ***strs, size_t ind)
 	size_t	indf;
 
 	indf = 0;
-	while (indf < ind)
+	while (indf <= ind)
 	{
 		free((*strs)[indf]);
 		indf ++;
@@ -54,31 +51,44 @@ static char	**freeall(char ***strs, size_t ind)
 	return (0);
 }
 
+static char	**setend(char **strs, size_t ind)
+{
+	(strs)[ind] = 0;
+	return (strs);
+}
+
+static size_t	bcalc(char *str, char *ref, char c)
+{
+	if (*str == c)
+		return (str - ref);
+	return (str - ref + 1);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
 	char	*str;
-	size_t	count;
+	char	*ref;
 	size_t	ind;
 
-	strs = (char **) malloc(total_space((char *) s, c) * sizeof(char *));
-	if (!strs || !s)
+	strs = (char **) malloc(total_space(s, c) * sizeof(char *));
+	if (strs == 0 || s == 0)
 		return (0);
 	str = (char *) s;
+	ref = 0;
 	ind = 0;
-	while (*str)
+	while (*str != 0)
 	{
-		count = 1;
-		if (*str != c)
+		if (*str != c && ref == 0)
+			ref = str;
+		if ((*str == c || *(str + 1) == 0) && ref != 0)
 		{
-			while (str[count] && str[count] != c)
-				count ++;
-			strs[ind] = ft_substr(str, 0, count);
-			if (!strs[ind ++])
-				return (freeall(&strs, ind));
+			strs[ind] = ft_substr((char const *) ref, 0, bcalc(str, ref, c));
+			if (strs[ind++] == 0)
+				return (freeall(&strs, ind - 1));
+			ref = 0;
 		}
-		str += count;
+		str ++;
 	}
-	strs[ind] = 0;
-	return (strs);
+	return (setend(strs, ind));
 }

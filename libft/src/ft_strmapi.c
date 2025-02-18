@@ -18,18 +18,18 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	ind;
 	char	*str;
 
-	if (!f)
+	if (f == 0)
 		return (0);
 	ind = 0;
 	len = ft_strlen(s);
 	str = (char *) malloc(len + 1);
-	if (!str)
+	if (str == 0)
 		return (0);
+	str[len] = 0;
 	while (ind < len)
 	{
 		str[ind] = f((unsigned int) ind, s[ind]);
 		ind ++;
 	}
-	str[len] = 0;
 	return (str);
 }

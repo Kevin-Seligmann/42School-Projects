@@ -6,7 +6,7 @@
 /*   By: kseligma <kseligma@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:38:30 by kseligma          #+#    #+#             */
-/*   Updated: 2024/02/14 06:23:21 by kseligma         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:06:32 by kseligma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,20 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	size_t	count;
 
-	if (!dst && !src && len > 0)
-		return (0);
-	i = 0;
 	if (dst > src)
 	{
-		while (i < len)
+		count = 0;
+		while (count < len)
 		{
-			((char *) dst)[len - i - 1] = ((char *) src)[len - i - 1];
-			i ++;
+			((char *) dst)[len - count - 1] = ((char *) src)[len - count - 1];
+			count ++;
 		}
 	}
 	else
 	{
-		while (i < len)
-		{
-			((char *) dst)[i] = ((char *) src)[i];
-			i ++;
-		}
+		ft_memcpy(dst, src, len);
 	}
 	return (dst);
 }
