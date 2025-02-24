@@ -1,5 +1,7 @@
 # pipex
 
+(code to be recovered)
+
 Pipex is a program that simulates bash pipes `|` between two files and a chain of simple commands.
 
 ## General Requirements  
