@@ -1,5 +1,7 @@
 # philosophers
 
+(Code to be recovered)
+
 This program simulates the dining philosophers problem in C. It has two versions, the classic dining philosohpers problem (V1) and a version where the "forks" are in the middle of the table.
 
 Version 1 uses threads and mutexes. Version 2 uses semaphores and subprocesses.
