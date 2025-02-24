@@ -1,5 +1,7 @@
 # push_swap
 
+(code to be recovered)
+
 Push swap is a sorting algorithm where the user provides a list of numbers. This list is interpreted as a stack and it needs to be sorted using a specific set of instructions. There's a second stack avaiable to help sorting the original stack. Instructions are printed to stdout.
 
 ## General Requirements  
