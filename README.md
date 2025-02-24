@@ -28,7 +28,7 @@ This repository contains projects made at **42School**.
 
 ## C++ Projects  
 
-- **C++ Modules** – Standalone functions written in C++.
+- **C++ Modules** – Standalone functions or small programs written in C++.
 
 ## Other  
 
