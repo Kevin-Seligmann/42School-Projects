@@ -2,10 +2,18 @@
 
 This repository contains projects made at **42School**.
 
-## Java Projects  
+## Java & Web-related Projects 
 
 - **avaj_launcher** – A weather simulation program implementing basic Java design patterns.
 - **swingy** – A graphical game following the MVC pattern using Swing.
+- **Inception** – Set up a worpdress website with nginx and mariadb, only with your own dockerfiles.
+
+## C Projects  
+
+- **ft_ping** – A program to ping IPv4 addresses and display information.
+- **minishell** – A medium-sized Bash-like CLI implementation.
+- **Fdf** – A graphical project to create a wireframe model from a file.
+- **cub3d** – A 3D world simulation using ray tracing.
 
 ## Basic C Projects  
 
@@ -17,18 +25,11 @@ This repository contains projects made at **42School**.
 - **push_swap** – A program to efficiently sort a stack.
 - **Philosophers** – A simulation of the "Dining Philosophers" problem.
 
-## C Projects  
-
-- **Fdf** – A graphical project to create a wireframe model from a file.
-- **cub3d** – A 3D world simulation using ray tracing.
-- **minishell** – A medium-sized Bash-like CLI implementation.
-- **ft_ping** – A program to ping IPv4 addresses and display information.
-
 ## C++ Projects  
 
 - **C++ Modules** – Standalone functions written in C++.
 
 ## Other  
 
-- **libasm** – A utility library written in Assembly (ASM).
 - **Born2beroot** – Setting up a Linux environment on a VM.
+- **libasm** – A utility library written in Assembly (ASM).
