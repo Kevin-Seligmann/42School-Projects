@@ -1,0 +1,45 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    App\Bundle\E01Bundle\:
+        resource: '../bundle/E01Bundle/src/'
+
+    App\Bundle\E02Bundle\:
+        resource: '../bundle/E02Bundle/src/'
+
+    App\Bundle\E03Bundle\:
+        resource: '../bundle/E03Bundle/src/'
+    
+    App\Bundle\E04Bundle\:
+        resource: '../bundle/E04Bundle/src/'
+    
+    App\Bundle\E05Bundle\:
+        resource: '../bundle/E05Bundle/src/'
+    
+    App\Bundle\E06Bundle\:
+        resource: '../bundle/E06Bundle/src/'
+    
+    App\Bundle\E07Bundle\:
+        resource: '../bundle/E07Bundle/src/'
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones

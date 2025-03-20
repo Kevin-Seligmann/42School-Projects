@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1> -- Colors --  </h1>
+	<table>
+		<tr>
+			{% for color in colors.names %}
+				<th style="width: 40px; height: 80px">{{ color }}</th>
+			{% endfor %}
+		</tr>
+		{% for i in 0 .. (colors.amount - 1) %}
+			<tr>
+				{% for color in colors.names %}
+					<td style="background-color: rgb({{ colors[color][i].r }}, {{ colors[color][i].g }}, {{ colors[color][i].b }}); width: 80px; height: 40px;"></td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

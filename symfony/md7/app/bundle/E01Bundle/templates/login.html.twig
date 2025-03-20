@@ -1,0 +1,19 @@
+{% extends '@E01Bundle/base.html.twig' %}
+
+{% block content %}
+
+	<p> Login </p>
+
+    <form action="{{ path('ex01_login_form') }}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="_username" value="{{ username }}" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="_password" required>
+
+        <input type="hidden" name="_target_path" value="/ex01/homepage">
+
+        <button type="submit">login</button>
+    </form>
+
+{% endblock %}

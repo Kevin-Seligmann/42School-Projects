@@ -1,0 +1,24 @@
+{% extends '@E01Bundle/base.html.twig' %}
+
+{% block content %}
+
+	<p> Admin </p>
+
+	<p> Users </p>
+	<table>
+		<tr>
+			<th>Username</th>
+			<th>Delete</th>
+		</tr>
+		{% for username in users %}
+		<tr>
+			<td>{{username}}</td>
+			<td><a href="{{ path('ex02_delete_user', {username}) }}">X</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+
+	<a href="{{ path('ex01_homepage') }}">Homepage</a>
+
+
+{% endblock %}

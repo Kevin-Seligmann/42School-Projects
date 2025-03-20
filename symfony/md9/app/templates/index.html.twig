@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div id="mainFormContainer">
+	{% if user is null %}
+		{{ include('login.html.twig') }}
+	{% else %}
+		{{form(form)}}
+		<form action="{{path('logoutAttempt')}}" onsubmit="logoutRequest(event)">
+			<button>Logout</button>
+		</form>
+	{% endif %}
+</div>
+
+<h2>Posts</h2>
+
+<table id="postsContainer">
+	<tr>
+		<th>Title</th>
+		<th>Created</th>
+		<th>View</th>
+	</tr>
+	{% for post in posts %}
+	<tr id="{{post.id}}">
+		<td>{{post.title}}</td>
+		<td>{{post.created.format('Y-m-d')}}</td>
+		<td>
+			<form action="{{path('viewAction', {id: post.getId()})}}" onsubmit="viewPost(event)">
+				<button>View post</button>
+			</form>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

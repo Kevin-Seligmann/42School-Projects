@@ -1,0 +1,29 @@
+{% extends '@E01Bundle/base.html.twig' %}
+
+{% block content %}
+
+	<h1> Welcome </h1>
+
+	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		<p> Welcome, user {{app.user.getDisplayUsername}} </p>
+		<a href="{{ path('ex01_logout') }}">Logout</a>
+
+		<h2> Posts </h2>
+		<a href="{{ path('ex03_post_form') }}">New post</a><br>
+		<ul>
+		{% for post in posts %}
+			<li> <a href="{{ path('ex03_post', {'id': post.id}) }}">{{post.title}}</a> - {{post.author.getDisplayUsername}} ({{post.created.format('Y-m-d')}}) (L: {{post.likes}}, DISL: {{post.dislikes}})</li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>Welcome, {{ app.session.get('anonymous_username') }}!</p>
+		<p>Anonymous user timer: {{ app.session.get('anonymous_timer')}}</p>
+		<a href="{{ path('ex01_register_form') }}">Register</a>
+		<a href="{{ path('ex01_login_form') }}">Login</a>
+	{% endif %}
+
+	{% if is_granted('ROLE_ADMIN') %}
+		<a href="{{ path('ex02_admin') }}">Admin panel</a>
+	{% endif %}
+
+{% endblock %}

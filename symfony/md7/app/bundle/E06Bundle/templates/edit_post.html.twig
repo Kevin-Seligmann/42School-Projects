@@ -1,0 +1,11 @@
+{% extends '@E01Bundle/base.html.twig' %}
+
+{% block content %}
+
+	<a href="{{ path('ex01_homepage') }}">Homepage</a>
+	<a href="{{ path('ex03_post', {'id': post.id}) }}">Post</a>
+
+	{{ form(form) }}
+
+
+{% endblock %}

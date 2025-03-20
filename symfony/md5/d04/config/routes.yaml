@@ -1,0 +1,17 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+firstpage:
+    path: /e00/firstpage
+    controller: App\Controller\FirstpageController::index
+
+article:
+    path: /e01/{article?}
+    controller: App\Controller\ArticleController::index
+
+form:
+    path: /e02/
+    controller: App\Controller\FormController::index

@@ -1,0 +1,21 @@
+<form action="{{ path('loginAttempt') }}" onsubmit="loginRequest(event)">
+	<label for="username">Username:</label>
+	<input type="text" id="username" name="_username" required>
+
+	<label for="password">Password:</label>
+	<input type="password" id="password" name="_password" required>
+
+	<button type="submit">Login</button>
+</form>
+
+<hr>
+
+<form action="{{ path('registerAttempt') }}" onsubmit="registerRequest(event)">
+	<label for="username">Username:</label>
+	<input type="text" id="username" name="_username" required>
+
+	<label for="password">Password:</label>
+	<input type="password" id="password" name="_password" required>
+
+	<button type="submit">Create new account</button>
+</form>

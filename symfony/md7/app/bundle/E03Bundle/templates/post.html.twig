@@ -1,0 +1,31 @@
+{% extends '@E01Bundle/base.html.twig' %}
+
+{% block content %}
+
+	<a href="{{ path('ex01_homepage') }}">Homepage</a>
+
+	<h2>{{post.title}}</h2>
+	<p>{{post.author.getDisplayUsername}}, {{post.created.format('Y-m-d')}}</p>
+	<p>{{post.content}}</p>
+
+	{% if privileges.canLikePosts(user) %}
+		<a href="{{ path('ex05_vote', {'userId': user.id, 'postId': post.id, 'voteValue': 1})}}">like</a>
+	{% endif %}
+
+	{% if privileges.canDislikePosts(user) %}
+		<a href="{{ path('ex05_vote', {'userId': user.id, 'postId': post.id, 'voteValue': -1})}}">dislike</a>
+	{% endif %}
+
+	{% if privileges.canEditPost(user, post) %}
+		<a href="{{ path('ex06_edit_post', {'id': post.id})}}">Edit post</a>
+	{% endif %}
+
+	<p>Status: {{vote}} </p>
+	<p>Edit:
+		{% if post_edit is defined and post_edit %}
+			By: {{post_edit.editor.getDisplayUsername}}, Date: {{post_edit.date.format('Y-m-d H:i:s')}}
+		{% else %}
+			Not edited
+		{% endif %}
+	</p>
+{% endblock %}

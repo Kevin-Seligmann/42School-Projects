@@ -1,0 +1,11 @@
+doctrine_migrations:
+    migrations_paths:
+        # namespace is arbitrary but should be different from App\Migrations
+        # as migrations classes should NOT be autoloaded
+        'DoctrineMigrations': '%kernel.project_dir%/migrations'
+        'E01Migrations': '%kernel.project_dir%/bundle/E01Bundle/migrations'
+        'E03Migrations': '%kernel.project_dir%/bundle/E03Bundle/migrations'
+        'E05Migrations': '%kernel.project_dir%/bundle/E05Bundle/migrations'
+        'E06Migrations': '%kernel.project_dir%/bundle/E06Bundle/migrations'
+
+    enable_profiler: false

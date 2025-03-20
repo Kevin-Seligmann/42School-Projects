@@ -1,0 +1,12 @@
+twig:
+    file_name_pattern: '*.twig'
+    paths:
+        '%kernel.project_dir%/bundle/E01Bundle/templates': E01Bundle
+        '%kernel.project_dir%/bundle/E02Bundle/templates': E02Bundle
+        '%kernel.project_dir%/bundle/E03Bundle/templates': E03Bundle
+        '%kernel.project_dir%/bundle/E06Bundle/templates': E06Bundle
+        #'%kernel.project_dir%/bundle/E07Bundle/templates': E07Bundle
+
+when@test:
+    twig:
+        strict_variables: true

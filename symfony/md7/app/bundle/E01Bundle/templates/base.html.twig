@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Piscine!</title>
+    </head>
+    <body>
+    
+        {% for message in app.flashes('error') %}
+            <div">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% for message in app.flashes('success') %}
+            <div>
+                {{ message }}
+            </div>
+        {% endfor %}
+    
+        {% block content %}{% endblock %}
+
+        <footer>
+            <p>This is a school project for 42! And this, this is a footer.</p>
+        </footer>
+    </body>
+</html>

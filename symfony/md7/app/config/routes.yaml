@@ -1,0 +1,26 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+E01Bundle:
+    resource: '@E01Bundle/config/routes.yaml'
+
+E02Bundle:
+    resource: '@E02Bundle/config/routes.yaml'
+
+E03Bundle:
+    resource: '@E03Bundle/config/routes.yaml'
+
+E04Bundle:
+    resource: '@E04Bundle/config/routes.yaml'
+
+E05Bundle:
+    resource: '@E05Bundle/config/routes.yaml'
+
+E06Bundle:
+    resource: '@E06Bundle/config/routes.yaml'
+
+E07Bundle:
+    resource: '@E07Bundle/config/routes.yaml'

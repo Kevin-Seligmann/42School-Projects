@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1> -- A form --  </h1>
+
+	{{ form(form) }}
+
+	{% if writenText is defined %}
+		<p>Writen on file: {{ writenText }}</p>
+	{% endif %}
+
+
+{% endblock %}
