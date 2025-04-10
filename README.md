@@ -2,12 +2,12 @@
 
 This repository contains projects made at **42School**.
 
-## Java & Web-related Projects 
+## Web-related Projects & Java
 
+- **Symfony** – A serie of exercises exploring from basics of PHP to most features of Symfony 
 - **avaj_launcher** – A weather simulation program implementing basic Java design patterns. [source](https://github.com/Kevin-Seligmann/avaj-launcher)
 - **swingy** – A graphical game following the MVC pattern using Swing. [source](https://github.com/Kevin-Seligmann/swingy)
 - **Inception** – Set up a wordpress website with nginx and mariadb, only with your own dockerfiles. [source](https://github.com/Kevin-Seligmann/inception)
-- **Symfony** – A serie of exercises exploring from basics of PHP to most features of Symfony 
 
 ## C Projects  
 
