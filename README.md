@@ -29,6 +29,7 @@ This repository contains projects made at **42School**.
 
 ## C++ Projects  
 
+- **Object piscine** - A serie of exercises to learn OOP and features of modern C++
 - **C++ Modules** – Standalone functions or small programs written in C++.
 
 ## Other  
