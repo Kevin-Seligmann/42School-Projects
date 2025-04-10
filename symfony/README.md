@@ -6,23 +6,23 @@ Each module contains a file with instructions for the exercises and tasks. The f
 
 ### Module Overview
 
-9. **Module 9:** Single-page App, Websockets, Custom console Commands
+**Module 9:** Single-page App, Websockets, Custom console Commands
 
-8. **Module 8:** Locales, Configuration Files, Parameters, Twig Extensions, PHPUnit
+**Module 8:** Locales, Configuration Files, Parameters, Twig Extensions, PHPUnit
 
-7. **Module 7:** App, Sessions, Users, Security, Roles, Bundles and Bundle configuration, and Fixtures
+**Module 7:** App, Sessions, Users, Security, Roles, Bundles and Bundle configuration, and Fixtures
 
-6. **Module 6:** SQL and Doctrine ORM, simple and complex queries
+**Module 6:** SQL and Doctrine ORM, simple and complex queries
 
-5. **Module 5:** Basics of Symfony - Routing and Twig Templates
+**Module 5:** Basics of Symfony - Routing and Twig Templates
 
-4. **Module 4:** Basics of Composer
+**Module 4:** Basics of Composer
 
-3. **Module 3:** Basics of PHP, custom simple template engine
+**Module 3:** Basics of PHP, custom simple template engine
 
-2. **Module 2:** Basics of PHP
+**Module 2:** Basics of PHP
 
-1. **Module 1:** Basics of HTML, JS, and CSS
+**Module 1:** Basics of HTML, JS, and CSS
 
 
 
